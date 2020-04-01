@@ -7,13 +7,11 @@ Rails.application.routes.draw do
   end
   resources :tweets do
     resources :comments, only: :create
-    collection do  # この行は削除する
-      get 'search'  # この行は削除する
-    end  # この行は削除する
+    
     collection do
       get 'search'
     end
   end
   resources :users, only: :show
-        #[tweets]コントローラ名
+        
 end
